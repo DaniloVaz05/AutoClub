@@ -5,39 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="recuperar_senha.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Recuperar Senha</title>
-
-    <style>
-        /*CSS da mensagem de e-mail enviado*/
-        .message-box {
-            display: none;
-            position: fixed;
-            top: 50%;
-            right: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f8f9fa;
-            color: #000;
-            border: 1px solid #0073e6;
-            border-radius: 5px;
-            padding: 20px;
-            max-width: 300px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-            text-align: center;
-        }
-
-        .message-box .close-btn {
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #0073e6;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -45,7 +15,8 @@
     <nav id="navbar" class="navbar navbar-expand-lg bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img id="logo" src="../imagens/AutoClub_logo.png" class="img-fluid" style="max-width: 80px; height: auto;">
+                <img id="logo" src="../imagens/AutoClub_logo.png" class="img-fluid"
+                    style="max-width: 80px; height: auto;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -91,14 +62,19 @@
         <!-- Seção de Login -->
         <section class="login-section">
             <h2>Esqueceu a Senha?</h2>
-            <form id="loginForm" class="loginForm" action="../includes/recuperar_senha.php" method="POST">
+            <form id="loginForm" class="loginForm">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+                </div>
+
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Digite seu email">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Digite seu email">
                 </div>
-                
+
                 <div class="acoes-login">
-                    <button type="submit" class="btn entrar">Enviar E-mail</button>
+                    <button type="submit" class="btn entrar" id="sendEmailButton">Enviar E-mail</button>
                 </div>
             </form>
         </section>
@@ -108,7 +84,8 @@
 
     <div class="message-box" id="messageBox">
         <span class="close-btn" onclick="closeMessageBox()">×</span>
-        <p>Um e-mail foi enviado para sua caixa de entrada. Verifique seu e-mail para continuar com a recuperação de senha.</p>
+        <p>Um e-mail foi enviado para sua caixa de entrada. Verifique seu e-mail para continuar com a recuperação de
+            senha.</p>
     </div>
 
     <script>
@@ -119,7 +96,7 @@
         }
 
         // Função para exibir a caixa de mensagem
-        function showMessageBox() {
+        function showMessageBox(message) {
             const messageBox = document.getElementById("messageBox");
             messageBox.style.display = "block";
         }
@@ -131,7 +108,7 @@
         }
 
         // Adiciona o evento de envio ao formulário
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
             event.preventDefault(); // Impede o envio do formulário
 
             const email = document.getElementById("email").value;
@@ -144,7 +121,6 @@
             }
         });
     </script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- JS modo escuro -->
     <script>
@@ -170,5 +146,8 @@
 
     </script>
 
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="recuperar_senha.js"></script>
 </body>
+
 </html>

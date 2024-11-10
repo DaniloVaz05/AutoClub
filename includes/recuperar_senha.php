@@ -1,6 +1,9 @@
 <?php
+
+require '../PHPMailerAutoload.php';
+
 // Conexão com o banco de dados
-$pdo = new PDO('mysql:host=127.0.0.1;port=3306;dbname=AutoClub', 'login', 'senha');
+require("conexao.php");
 
 // Verificar se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -31,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $assunto = "Redefinição de Senha";
 
         // Corpo do e-mail (em HTML)
+        //olá
         $mensagem = "
         <html>
         <head>
