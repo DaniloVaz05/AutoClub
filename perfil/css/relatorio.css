@@ -1,0 +1,178 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 100px; /* Espaçamento para a navbar */
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background-color: #fff;
+    width: 80%;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 8rem;
+}
+
+/* Tabela de relatórios */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th, .table td {
+    padding: 12px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+.btn-sm {
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Seção de relatórios */
+.relatorios-section h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.acoes-relatorios {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.acoes-relatorios .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.acoes-relatorios .btn:hover {
+    background-color: #45a049;
+}
+
+/* NavBar */
+#navbar {
+    height: auto;
+}
+
+#logo {
+    max-width: 80px; /* Tamanho máximo da logo */
+    height: auto; /* Mantém a proporção */
+}
+
+.navbar-toggler {
+    border-color: white; /* Muda a cor da borda do botão para branco */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Alinhamento à direita para os links "Entrar" e "Cadastre-se" */
+.d-flex {
+    margin-left: auto; /* Empurra os botões para a direita */
+}
+
+/* Estilo para a logo */
+#logo {
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    transform-style: preserve-3d; /* Habilita o efeito 3D */
+}
+
+/* Muda a cor do texto ao passar o mouse */
+.navbar-nav .nav-item .text-white:hover {
+    color: #f0ad4e; /* Cor de destaque */
+}
+
+/* Estilo do dropdown */
+.navbar-nav .dropdown-menu {
+    background-color: #343a40; /* Fundo escuro */
+    border: none; /* Remove a borda padrão */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    transition: all 0.3s ease; /* Transição suave para o dropdown */
+}
+
+.navbar-nav .dropdown-item {
+    color: white; /* Cor do texto das opções do dropdown */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+}
+
+/* Muda a cor de fundo e do texto ao passar o mouse */
+.navbar-nav .dropdown-item:hover {
+    background-color: #f0ad4e; /* Fundo laranja ao passar o mouse */
+    color: #000; /* Cor do texto */
+}
+
+/* Muda a cor do texto ao passar o mouse */
+.navbar-nav .nav-item .text-white:hover {
+    color: #f0ad4e; /* Cor de destaque */
+}
+
+/* Estilo do dropdown */
+.navbar-nav .dropdown-menu {
+    background-color: #343a40; /* Fundo escuro */
+    border: none; /* Remove a borda padrão */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    transition: all 0.3s ease; /* Transição suave para o dropdown */
+}
+
+/* Efeito 3D na logo ao passar o mouse */
+#logo:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Rotaciona e aumenta a logo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+
+/* Responsividade para garantir que a logo se ajuste em telas menores */
+@media (max-width: 768px) {
+    #logo {
+        max-width: 60px; /* Reduz o tamanho da logo em dispositivos menores */
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .table th, .table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .acoes-relatorios .btn {
+        width: 100%;
+        margin-top: 10px;
+    }
+}

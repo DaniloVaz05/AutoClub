@@ -1,0 +1,227 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 100px; /* Espaço para a navbar */
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background-color: #fff;
+    width: 80%;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 8rem;
+}
+
+/* Seção do Painel de Controle */
+.painel-controle-section h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Estilos dos cards */
+.card {
+    border: 1px solid #4CAF50;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.card .card-text {
+    font-size: 14px;
+    color: #666;
+}
+
+.card .btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.card .btn:hover {
+    background-color: #45a049;
+}
+
+
+/* NavBar */
+#navbar {
+    height: auto;
+}
+
+#logo {
+    max-width: 80px; /* Tamanho máximo da logo */
+    height: auto; /* Mantém a proporção */
+}
+
+.navbar-toggler {
+    border-color: white; /* Muda a cor da borda do botão para branco */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Alinhamento à direita para os links "Entrar" e "Cadastre-se" */
+.d-flex {
+    margin-left: auto; /* Empurra os botões para a direita */
+}
+
+/* Estilo para a logo */
+#logo {
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    transform-style: preserve-3d; /* Habilita o efeito 3D */
+}
+
+/* Muda a cor do texto ao passar o mouse */
+.navbar-nav .nav-item .text-white:hover {
+    color: #f0ad4e; /* Cor de destaque */
+}
+
+/* Estilo do dropdown */
+.navbar-nav .dropdown-menu {
+    background-color: #343a40; /* Fundo escuro */
+    border: none; /* Remove a borda padrão */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    transition: all 0.3s ease; /* Transição suave para o dropdown */
+}
+
+.navbar-nav .dropdown-item {
+    color: white; /* Cor do texto das opções do dropdown */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+}
+
+/* Muda a cor de fundo e do texto ao passar o mouse */
+.navbar-nav .dropdown-item:hover {
+    background-color: #f0ad4e; /* Fundo laranja ao passar o mouse */
+    color: #000; /* Cor do texto */
+}
+
+/* Efeito 3D na logo ao passar o mouse */
+#logo:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Rotaciona e aumenta a logo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+
+/* Responsividade para garantir que a logo se ajuste em telas menores */
+@media (max-width: 768px) {
+    #logo {
+        max-width: 60px; /* Reduz o tamanho da logo em dispositivos menores */
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+}
+
+
+
+
+
+
+
+/* Posicionamento dos botões de acessibilidade */
+.accessibility-buttons {
+    position: fixed;
+    top: 200px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilos para os botões de acessibilidade */
+.accessibility-buttons .btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.accessibility-buttons .btn:hover {
+    background-color: #0056b3;
+}
+
+.accessibility-buttons .btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.8);
+}
+
+/* Estilos para Modo Claro e Escuro */
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #333;
+    color: black;
+}
+
+/* body.dark-mode .btn {
+    background-color: #555;
+}
+
+body.dark-mode .btn:hover {
+    background-color: #333;
+} */
+
+
+
+/* Ajuste de Tamanho de Fonte */
+body {
+    font-family: Arial, sans-serif;
+}
+
+body {
+    transition: font-size 0.3s ease;
+}
+
+/* Responsividade dos botões */
+@media (max-width: 768px) {
+    .accessibility-buttons {
+        top: 10px;
+        right: 10px;
+    }
+}

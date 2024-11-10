@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/painel_controle.css">
+    <title>AutoClub | Painel de Controle</title>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="../imagens/AutoClub_logo.png" class="img-fluid"
+                    style="max-width: 80px; height: auto;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#sobre_nos">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Serviços</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../Oficina/index.html">Oficinas</a></li>
+                            <li><a class="dropdown-item" href="../Autopeças/index.html">Autopeças</a></li>
+                            <li><a class="dropdown-item" href="../Estética/index.html">Estética Automotiva</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="gerenciar_usuarios.html">Gerenciar Usuários</a></li>
+                            <li><a class="dropdown-item" href="relatorio.html">Relatórios</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIM NAVBAR -->
+
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Seção do Painel de Controle -->
+        <section class="painel-controle-section">
+            <h2 class="text-center">Painel de Controle</h2>
+
+            <div class="row">
+                <!-- Cards de funcionalidades -->
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Gerenciar Usuários</h5>
+                            <p class="card-text">Adicione, edite ou remova usuários do sistema.</p>
+                            <a href="gerenciar_usuario.html" class="btn btn-primary">Acessar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Relatórios</h5>
+                            <p class="card-text">Visualize os relatórios de atividades e usuários.</p>
+                            <a href="relatorio.html" class="btn btn-primary">Acessar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

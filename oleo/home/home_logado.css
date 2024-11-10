@@ -1,0 +1,1519 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: 53px; /* Espaçamento para evitar que o conteúdo seja coberto pela navbar */
+}
+
+/* -------------------scroll bar ------------------ */
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgb(64, 57, 57);
+    border-radius: 0px;
+}
+
+
+/* ------------------------------------- */
+
+
+
+
+
+
+
+/*Footer*/
+#footer {
+    background-image: url("../imagens/bg_footer.png");
+    height: 380px;
+
+}
+
+@media (max-width: 430px) {
+    #footer {
+        height: 900px;
+    }
+}
+
+
+#logo_footer {
+    height: 100px;
+    width: 100px;
+
+}
+
+#objetivo {
+    font-size: 12px;
+    width: 150px;
+}
+
+#link_icon {
+    text-decoration: none;
+    color: aliceblue;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NavBar */
+#navbar {
+    height: auto;
+}
+
+#logo {
+    max-width: 80px; /* Tamanho máximo da logo */
+    height: auto; /* Mantém a proporção */
+}
+
+.navbar-toggler > .container-fluid{
+    border-color: white; /* Muda a cor da borda do botão para branco */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Alinhamento à direita para os links "Entrar" e "Cadastre-se" */
+.d-flex {
+    margin-left: auto; /* Empurra os botões para a direita */
+}
+
+/* Estilo para a logo */
+#logo {
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    transform-style: preserve-3d; /* Habilita o efeito 3D */
+}
+
+/* Efeito 3D na logo ao passar o mouse */
+#logo:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Rotaciona e aumenta a logo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+
+/* Estilo para o ícone do usuário */
+.user-icon {
+    width: 60px; /* Aumenta a largura */
+    height: 60px; /* Aumenta a altura */
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover; /* Cobre o espaço da imagem */
+    border: 2px solid white; /* Adiciona uma borda branca */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Adiciona uma leve sombra para destaque */
+}
+
+
+/* Estilo para o texto de boas-vindas */
+.welcome-text {
+    display: inline-block; /* Faz o texto ficar ao lado do ícone */
+    margin-left: 8px; /* Espaçamento entre o ícone e o texto */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Ajustes no tamanho do texto */
+.welcome-text span {
+    font-size: 14px; /* Tamanho do texto */
+    font-weight: 500; /* Peso do texto */
+    color: white; /* Cor do texto */
+    line-height: 1; /* Alinhamento vertical adequado */
+}
+
+
+/* Estilo para o ícone de perfil */
+.navbar-nav .nav-item .nav-link .material-symbols-outlined {
+    font-size: 36px; /* Tamanho do ícone */
+    color: white; /* Cor do ícone */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transições suaves */
+    margin-left: 100px;
+}
+
+/* Aumenta o ícone ao passar o mouse */
+.navbar-nav .nav-item .nav-link:hover .material-symbols-outlined {
+    transform: scale(1.2); /* Aumenta levemente o ícone ao passar o mouse */
+    color: #f0ad4e; /* Cor de destaque */
+}
+
+/* Estilo para o texto "Bem-Vindo" */
+.navbar-nav .nav-item .text-white {
+    font-size: 18px; /* Tamanho do texto */
+    font-weight: 500; /* Peso do texto */
+    color: white; /* Cor branca */
+    line-height: 1; /* Alinhamento vertical adequado */
+}
+
+/* Muda a cor do texto ao passar o mouse */
+.navbar-nav .nav-item .text-white:hover {
+    color: #f0ad4e; /* Cor de destaque */
+}
+
+/* Estilo do dropdown */
+.navbar-nav .dropdown-menu {
+    background-color: #343a40; /* Fundo escuro */
+    border: none; /* Remove a borda padrão */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    transition: all 0.3s ease; /* Transição suave para o dropdown */
+}
+
+.navbar-nav .dropdown-item {
+    color: white; /* Cor do texto das opções do dropdown */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+}
+
+/* Muda a cor de fundo e do texto ao passar o mouse */
+.navbar-nav .dropdown-item:hover {
+    background-color: #f0ad4e; /* Fundo laranja ao passar o mouse */
+    color: #000; /* Cor do texto */
+}
+
+/* Responsividade para ícones menores em telas pequenas */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item .nav-link .material-symbols-outlined {
+        font-size: 28px; /* Tamanho menor para dispositivos móveis */
+    }
+
+    .navbar-nav .nav-item .text-white {
+        font-size: 16px; /* Texto menor para dispositivos móveis */
+    }
+}
+
+
+
+
+/* Responsividade para garantir que a logo se ajuste em telas menores */
+@media (max-width: 768px) {
+    #logo {
+        max-width: 60px; /* Reduz o tamanho da logo em dispositivos menores */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+h3 {
+    padding: 10px;
+}
+
+
+/* ---------------- */
+
+/* -----------------Section#1------------------------------- */
+
+
+section#s1 {
+    text-align: justify;
+    font-family: poppins;
+    height: 770px;
+
+    overflow: hidden;
+    position: relative;
+
+}
+
+
+.carro1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 620px;
+    margin-top: 50px;
+}
+
+
+img#imgc2 {
+    width: 789px;
+    height: 882px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    object-fit: cover;
+    clip-path: polygon(35% 0, 117% 0, 100% 100%, 20% 100%, 0 80%);
+
+}
+
+
+
+
+
+#s1 h1 {
+    text-align: center;
+    font-size: 3.5em;
+
+
+
+}
+
+#s1 p {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+
+/* -------------------------Section#2------------------------------ */
+section#s2 {
+    width: 100%;
+    height: 1150px;
+
+}
+
+
+section#s2 h2 {
+    font-family: poppins;
+    position: relative;
+    top: 30px;
+    text-align: center;
+    color: white;
+    padding: 14px;
+    font-size: 2.5em;
+    background-color: rgb(218, 99, 8);
+    top: 45px;
+}
+
+
+.Container {
+    background-color: rgb(56, 53, 53);
+    height: 300px;
+    text-align: center;
+
+}
+
+.cb {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: 15px;
+
+}
+
+div.cb p {
+    color: rgb(255, 255, 255);
+    position: relative;
+    right: 138px;
+    top: 115px;
+}
+
+/* ------- */
+p#pf {
+    right: 120px;
+}
+
+p#ps {
+    right: 145px;
+}
+
+/* --------*/
+.bolotas {
+    display: inline-block;
+    position: relative;
+    top: 50px;
+    margin-right: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+
+.bolotas:hover {
+    transition: 0.3s;
+    transform: scale(1.1);
+
+
+
+
+}
+
+.container p {
+    color: rgb(255, 255, 255);
+
+
+}
+
+
+.ipt {
+    margin-top: 50px;
+    text-align: center;
+}
+
+
+input {
+
+    height: 24px;
+    border-radius: 30px;
+    outline: none;
+    border: none;
+    padding: 20px;
+    width: 550px;
+    background-color: rgb(50, 47, 47);
+    color: white;
+}
+
+.material-symbols-outlined {
+    position: relative;
+    color: white;
+    top: 7px;
+    right: 45px;
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+div.cp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    padding-top: 100px;
+}
+
+.peças {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 320px;
+    margin: 50px;
+    background-color: rgb(56, 53, 53);
+
+}
+
+.peças p {
+    color: rgb(0, 0, 0);
+    position: relative;
+    top: 190px;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+/* --------------------------------Section#3--------------------------------- */
+
+section#s3 {
+
+    color: white;
+    padding: 0px;
+    height: 475px;
+    background-color: #272727;
+/*  */
+
+
+}
+
+.ds3 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    height: 400px;
+    background-color: rgb(218, 99, 8);
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+div.ds3 h2 {
+    font-family: poppins;
+    position: relative;
+    top: 30px;
+    text-align: center;
+    color: white;
+    padding: 14px;
+    font-size: 2.5em;
+    background-color: rgb(218, 99, 8);
+    top: 45px;
+}
+
+
+.ds3-item {
+
+    padding: 0px;
+    height: 100%;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+#s3 h1 {
+    padding: 0px;
+    text-align: center;
+    font-size: 3em;
+    padding-top: 10px;
+    font-family: poppins;
+
+}
+
+#s3 h2 {
+    top: 10px;
+    color: rgb(255, 255, 255);
+    font-size: 2.5em;
+
+}
+
+#s3 p {
+
+    color: rgba(255, 255, 255, 0.897);
+    position: relative;
+
+    font-size: 25px;
+    text-align: center;
+
+}
+
+
+
+/* ---------------------section 1------------------- */
+
+/* ---------------------div 1------------------- */
+div.sf1 {
+    height: 700px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: poppins;
+}
+
+
+
+div.d1s1 {
+    margin-top: 10px;
+    font-size: 30px;
+    width: 500px;
+    height: 500px;
+
+}
+
+div.d1s1 h1 {
+    color: black;
+    font-size: 35px;
+    text-indent: 10px;
+}
+
+div.d1s1 h2 {
+    font-size: 24px;
+    color: black;
+
+
+}
+
+div.d1s1 h3 {
+    width: 230px;
+    font-size: 24px;
+    color: black;
+
+
+}
+
+div.d1s1 p {
+
+    color: black;
+
+
+}
+
+div.d1s1 a {
+
+    color: black;
+    color: rgba(0, 0, 255, 0.718);
+
+}
+
+
+/* ---------------------div 2------------------- */
+
+
+div.d2s1 {
+    margin-top: 10px;
+    font-size: 30px;
+    width: 500px;
+    height: 500px;
+
+}
+
+div.d2s1 h1 {
+    text-indent: 10px;
+    color: black;
+    font-size: 35px;
+
+
+}
+
+div.d2s1 h2 {
+    font-size: 24px;
+    color: black;
+
+
+}
+
+div.d2s1 h3 {
+    width: 230px;
+    font-size: 24px;
+    color: black;
+
+
+}
+
+div.d2s1 p {
+
+    color: black;
+
+
+}
+
+div.d2s1 a {
+
+    color: black;
+    color: rgba(0, 0, 255, 0.72);
+
+}
+
+/* ---------------------section 2------------------- */
+div.sf2 {
+
+    height: 600px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: poppins;
+    background-size: cover;
+    background-image: url(imagens/Background\ footer.png);
+
+}
+
+.sf2 img#i1 {
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    top: 365px;
+    left: 10px;
+}
+
+.sf2 img#i2 {
+    color: white;
+    top: 130px;
+    left: 10px;
+    position: absolute;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    height: 50px;
+}
+
+.d1s2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(208, 31, 31);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.510);
+}
+
+
+button {
+    width: 400px;
+    margin-top: 50px;
+    font-size: 30px;
+    border: 3px solid white;
+    background-color: rgb(208, 31, 31);
+    padding: 10px;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: white;
+    transform: scale(1.06);
+    color: black;
+    transition: 0.6s;
+}
+
+
+.d1s2 p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 50px;
+
+}
+
+.d2s2 {
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.487);
+    color: white;
+    text-decoration: none;
+    position: relative;
+    bottom: 25px;
+    width: 500px;
+    height: 550px;
+
+}
+
+.d2s2 img {
+    box-sizing: border-box;
+    margin: 0;
+    width: 165px;
+    height: 80px;
+    object-fit: cover;
+}
+
+/* .d2s2 img:hover {
+    cursor: pointer;
+    translate: -3% -3%;
+    transition: 0.6s;
+    
+} */
+
+.d2s2 h2 {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 45px;
+}
+
+.d2s2 h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.d2s2 p {
+    font-size: 14px;
+
+}
+
+.colunas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+
+
+}
+
+.d2s2 h4 {
+    font-size: 15px;
+    text-align: center;
+
+}
+
+
+
+.d3s2 {
+
+    bottom: 30px;
+    position: relative;
+    width: 500px;
+    height: 500px;
+
+}
+
+.d3s2 .logo {
+    box-sizing: border-box;
+    width: 185px;
+
+}
+
+.icone {
+    position: relative;
+    top: 170px;
+    left: 55px;
+    box-sizing: border-box;
+    margin: 0;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+
+.cc {
+    width: 256px;
+    height: 228px;
+    /* border: 1px solid purple; */
+    top: 59px;
+    left: 119px;
+    position: relative;
+}
+
+#seta {
+    position: absolute;
+    bottom: 458px;
+    width: 205px;
+    left: 297px;
+}
+
+#seta:hover {
+
+    scale: 1.1;
+    transition: 0.4s;
+}
+
+#mcaf {
+    position: absolute;
+    top: 277px;
+    left: 158px;
+    object-fit: cover;
+    width: 400px;
+}
+
+#gsf {
+    margin-right: 10px;
+    position: absolute;
+    top: 328px;
+    width: 400px;
+    left: 149px;
+    object-fit: cover;
+
+}
+
+#cs {
+    position: absolute;
+    top: 327px;
+    width: 401px;
+    right: 145px;
+    object-fit: cover;
+}
+
+#secf1 {
+ 
+    margin-right: 910px;
+    box-sizing: border-box;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+}
+
+#secf1 h3 {
+    font-family: poppins;
+    font-size: 20px;
+    font-weight: normal;
+}
+
+#secf1 img {
+
+
+    width: 150px;
+    height: 150px;
+}
+
+#secf2 {
+    margin-top: 80px;
+    box-sizing: border-box;
+    margin-left: 410px;
+    position: absolute;
+    text-align: center;
+    width: 800px;
+    height: 519px;
+    margin-right: 159px;
+
+}
+
+#secf2 h2 {
+    font-family: poppins;
+    font-size: 25px;
+
+}
+
+#secf2 h3 {
+    width: 210px;
+    font-family: poppins;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#secf2 h4 {
+    font-size: 10px;
+    text-align: center;
+    font-weight: normal;
+
+}
+
+#secf2 img {
+    width: 40px;
+    height: 40px;
+}
+
+.texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    font-weight: normal;
+}
+
+
+/* -------------------------------------Estilos gerais para dispositivos móveis -------------------------------------*/
+@media (max-width: 576px) {
+
+    /* -------------------------------------Estilos específicos para smartphones------------------------------------- */
+    div.login {
+        bottom: 5px;
+        font-size: 10px;
+        position: absolute;
+        display: flex;
+        padding: 10px;
+        right: 20px;
+    }
+
+    .logo {
+        box-sizing: border-box;
+        width: 50px;
+        position: absolute;
+        left: 10px;
+        font-size: 10px;
+        top: 10px;
+    }
+
+    #s1 h1 {
+        text-align: center;
+        font-size: 1.0em;
+    }
+
+    #s1 p {
+        text-align: center;
+        font-size: 1.0em;
+    }
+
+    img#imgc1 {
+        width: 300px;
+    }
+
+    section#s1 {
+        text-align: justify;
+        font-family: poppins;
+        height: 500px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    section#s2 h2 {
+        font-family: poppins;
+        position: relative;
+        top: 30px;
+        text-align: center;
+        color: white;
+        padding: 14px;
+        font-size: 0.7em;
+        background-color: rgb(218, 99, 8);
+        top: 30px;
+    }
+
+    .container {
+        background-color: rgb(56, 53, 53);
+        height: 485px;
+        text-align: center;
+    }
+
+    .cb {
+        display: block;
+    }
+
+    div.cb p {
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        position: relative;
+        right: 22px;
+        top: 45px;
+    }
+
+    p#pf {
+        right: 25px;
+    }
+
+    p#ps {
+        right: 25px;
+    }
+
+    .bolotas {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 5px;
+        top: 50px;
+        margin-right: 50px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        font-size: 5px;
+        width: 363px;
+    }
+
+    li {
+        font-size: 5px;
+    }
+
+    a {
+        font-size: 10px;
+    }
+
+    .d1s2 {
+        display: none;
+    }
+
+    img#imgc2 {
+        display: none;
+
+    }
+
+    .carro1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    input {
+        /* height: 2px; */
+        border-radius: 30px;
+        outline: none;
+        border: none;
+        padding: 15px;
+        width: 225px;
+        background-color: rgb(50, 47, 47);
+        color: white;
+    }
+
+    .peças {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px;
+        height: 100px;
+        margin: 25px;
+        background-color: rgb(56, 53, 53);
+    }
+
+    div.cp {
+        height: 65vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+
+
+    }
+
+    .peças p {
+        color: rgb(0, 0, 0);
+        position: relative;
+        top: 80px;
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    #s3 h1 {
+        padding: 0px;
+        text-align: center;
+        font-size: 1em;
+        padding-top: 10px;
+        font-family: poppins;
+    }
+
+    #s3 h2 {
+        top: 10px;
+        color: rgb(255, 255, 255);
+        font-size: 1.0em;
+    }
+
+    #s3 p {
+        color: rgba(255, 255, 255, 0.897);
+        position: relative;
+        font-size: 10px;
+        text-align: center;
+    }
+
+    section#s3 {
+        height: 290px;
+        color: white;
+        padding: 0px;
+        background-color: rgb(47, 46, 46);
+    }
+
+    .ds3 {
+
+        height: 225px;
+        background-color: rgb(218, 99, 8);
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .ds3-item {
+
+        /* padding: 20px; */
+        height: 100%;
+        width: 30%;
+        box-sizing: border-box;
+    }
+
+    div.sf1 {
+        height: 500px;
+        display: block;
+
+    }
+
+    div.sf2 {
+        display: block;
+    }
+
+    div.d1s1 {
+        margin-top: 10px;
+        font-size: 30px;
+        width: 500px;
+        height: 250px;
+    }
+
+    div.d2s1 {
+        margin-top: 10px;
+        font-size: 30px;
+        width: 500px;
+        height: 220px;
+    }
+
+    div.d1s1 h1 {
+        color: black;
+        font-size: 15px;
+        text-indent: 10px;
+    }
+
+    div.d1s1 p {
+        font-size: 10px;
+        color: black;
+    }
+
+    div.d1s1 h3 {
+
+        font-size: 15px;
+        color: black;
+    }
+
+    div.d1s1 h2 {
+        font-size: 15px;
+        color: black;
+    }
+
+    div.d2s1 h2 {
+        font-size: 15px;
+        color: black;
+    }
+
+    div.d2s1 h1 {
+        color: black;
+        font-size: 15px;
+        text-indent: 10px;
+    }
+
+    div.d2s1 p {
+        font-size: 10px;
+        color: black;
+    }
+
+    div.d2s1 h3 {
+
+        font-size: 15px;
+        color: black;
+    }
+
+    .barra {
+        border-radius: 20px;
+        width: 126px;
+        height: 4px;
+        background-color: rgb(128, 91, 39);
+        margin-bottom: 7px;
+    }
+
+    .d2s2 {
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.487);
+        color: white;
+        text-decoration: none;
+        position: relative;
+        bottom: 0px;
+        width: 100%;
+        /* Ajuste para ocupar a largura total */
+        height: auto;
+        /* Permite que a altura se ajuste ao conteúdo */
+        padding: 20px;
+        /* Adiciona um pouco de espaçamento */
+    }
+
+    .d2s2 h2 {
+        margin-top: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .d2s2 h3 {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 20px;
+        /* Ajuste a fonte para ser menor */
+        margin-bottom: 15px;
+    }
+
+    .d2s2 p {
+        font-size: 12px;
+        /* Ajuste para uma fonte menor */
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .d2s2 img {
+        box-sizing: border-box;
+        margin: 0;
+        width: 100px;
+        /* Ajusta a largura da imagem */
+        height: auto;
+        /* Mantém a proporção da imagem */
+        object-fit: cover;
+    }
+
+    div.sf2 {
+        height: 75%;
+
+    }
+
+    .d3s2 {
+
+
+        bottom: 20px;
+        position: relative;
+        width: 100%;
+        height: 28%;
+    }
+
+    .d3s2 .logo {
+
+
+
+        left: 5px;
+        box-sizing: border-box;
+        width: 100px;
+    }
+
+    .icone {
+
+        position: relative;
+        top: 100px;
+        /* Ajuste conforme necessário */
+        left: 0px;
+        /* Ajuste conforme necessário */
+        width: 30px;
+        /* Ajuste o tamanho conforme necessário */
+        height: 30px;
+        /* Ajuste o tamanho conforme necessário */
+    }
+
+    /* Ajuste outros estilos conforme necessário para dispositivos móveis */
+    #cs {
+
+        position: absolute;
+        top: 220px;
+        left: -8px;
+        object-fit: cover;
+        width: 400px;
+    }
+
+    #gsf {
+
+
+        /* margin-right: 10px; */
+        position: absolute;
+        top: 169px;
+        width: 250px;
+        left: 50px;
+        object-fit: cover;
+        /* text-align: center; */
+    }
+
+    #mcaf {
+
+
+        position: absolute;
+        top: 168px;
+        left: -8px;
+        object-fit: cover;
+        width: 400px;
+    }
+
+    #seta {
+
+        position: absolute;
+        top: 0px;
+        left: 120px;
+        object-fit: cover;
+        width: 120px;
+    }
+
+    .seila {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .colunas {
+        width: 289px;
+        display: block;
+        margin-bottom: 80px;
+    }
+
+}
+
+
+
+
+
+/* -------------------------------------Estilos para dispositivos pequenos------------------------------------- */
+@media (min-width: 577px) and (max-width: 768px) {
+    /* -------------------------------------Estilos específicos para smartphones grandes e tablets pequenos------------------------------------- */
+
+
+    a {
+        font-size: 15px;
+    }
+
+    div.login {
+        font-size: 10px;
+        position: absolute;
+        display: flex;
+        padding: 10px;
+        right: 20px;
+    }
+
+    .d2s2 h2 {
+        margin-top: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 25px;
+
+    }
+
+    .d2s2 img {
+        box-sizing: border-box;
+        margin: 0;
+        width: 105px;
+        height: 50px;
+        object-fit: cover;
+        margin-left: 40px;
+    }
+
+    .d2s2 h3 {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .d2s2 p {
+        font-size: 8px;
+
+    }
+
+    img#imgc2 {
+        display: none;
+
+    }
+
+    .carro1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    /*------------------------------------- Estilos específicos para tablets -------------------------------------*/
+    img#imgc2 {
+        display: none;
+
+    }
+
+    .carro1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+
+    /*------------------------------------- FOOTER -------------------------------------*/
+    .d1s2 {
+        display: none;
+    }
+
+
+    .d2s2 {
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.487);
+        color: white;
+        text-decoration: none;
+        position: relative;
+        bottom: 25px;
+        width: 500px;
+        height: 550px;
+    }
+
+    div.sf2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}
+
+
+
+/*------------------------------------- Estilos para tablets -------------------------------------*/
+@media (min-width: 769px) and (max-width: 1500px) {
+
+
+    a {
+        font-size: 15px;
+    }
+
+    div.login {
+        font-size: 10px;
+        position: absolute;
+        display: flex;
+        padding: 10px;
+        right: 20px;
+    }
+
+    .d2s2 h2 {
+        margin-top: 25px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 25px;
+
+    }
+
+    .d2s2 img {
+        box-sizing: border-box;
+        margin: 0;
+        width: 105px;
+        height: 50px;
+        object-fit: cover;
+        margin-left: 40px;
+    }
+
+    .d2s2 h3 {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 25px;
+        margin-bottom: 15px;
+    }
+
+    .d2s2 p {
+        font-size: 8px;
+
+    }
+
+    img#imgc2 {
+        display: none;
+
+    }
+
+    .carro1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+    /*------------------------------------- Estilos específicos para tablets -------------------------------------*/
+    img#imgc2 {
+        display: none;
+
+    }
+
+    .carro1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100vw;
+    }
+
+
+    /*------------------------------------- FOOTER -------------------------------------*/
+    .d1s2 {
+        display: none;
+    }
+
+
+    .d2s2 {
+        text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.487);
+        color: white;
+        text-decoration: none;
+        position: relative;
+        bottom: 25px;
+        width: 500px;
+        height: 550px;
+    }
+}

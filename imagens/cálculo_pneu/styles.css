@@ -1,0 +1,246 @@
+/* Global */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    padding-top: 100px; /* Espaçamento para evitar que o conteúdo seja coberto pela navbar */
+}
+
+
+/* Pré-loader */
+#preloader {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader {
+    border: 6px solid #f0f0f0;
+    border-top: 6px solid #7D7D7D; /* Cinza Jumbo */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Search Section */
+.search-section {
+    background-image: url('oficina-background.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 50px 10px;
+    text-align: center;
+    color: black; /* Mudança para preto */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.search-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: black; /* Mudança para preto */
+}
+
+.search-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: black; /* Mudança para preto */
+}
+
+.search-section form label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: black; /* Mudança para preto */
+}
+
+/* Inputs e Botões mantêm o estilo anterior */
+.search-section form input[type="number"], 
+.search-section form input[type="text"],
+.search-section form textarea {
+    width: 100%;
+    max-width: 350px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ced4da;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+    outline: none;
+}
+
+.search-section form input[type="number"]:focus,
+.search-section form input[type="text"]:focus,
+.search-section form textarea:focus {
+    border-color: #7D7D7D; /* Cinza Jumbo */
+}
+
+.search-section form button {
+    background-color: #7D7D7D; /* Cinza Jumbo */
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-section form button:hover {
+    background-color: #666666; /* Cinza mais escuro */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bar */
+.progress-bar {
+    width: 100%;
+    max-width: 600px;
+    background-color: #e9ecef;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 30px;
+    background: linear-gradient(90deg, #7D7D7D 0%, #666666 100%);
+    border-radius: 20px;
+    line-height: 30px;
+    color: white;
+    text-align: center;
+    transition: width 0.5s ease;
+}
+
+/* FAQ e Feedback continuam brancos por cima */
+.faq, .feedback {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    color: #333;
+}
+
+
+/* Botão flutuante de contato */
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #7D7D7D; /* Cinza Jumbo */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+}
+
+.contact-button a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.contact-button:hover {
+    background-color: #666666; /* Cinza mais escuro */
+}
+
+
+
+
+
+/*Footer*/
+#footer {
+    background-image: url("../imagens/bg_footer.png");
+    height: 380px;
+
+}
+
+@media (max-width: 430px) {
+    #footer {
+        height: 900px;
+    }
+}
+
+
+#logo_footer {
+    height: 100px;
+    width: 100px;
+
+}
+
+#objetivo {
+    font-size: 12px;
+    width: 150px;
+}
+
+#link_icon {
+    text-decoration: none;
+    color: aliceblue;
+    text-align: center;
+}
+
+
+
+
+
+
+
+/* NavBar */
+#navbar {
+    height: auto;
+}
+
+#logo {
+    max-width: 80px; /* Tamanho máximo da logo */
+    height: auto; /* Mantém a proporção */
+}
+
+
+
+.navbar-toggler {
+    border-color: white; /* Muda a cor da borda do botão para branco */
+    
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Alinhamento à direita para os links "Entrar" e "Cadastre-se" */
+.d-flex {
+    margin-left: auto; /* Empurra os botões para a direita */
+}
+
+/* Estilo para a logo */
+#logo {
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    transform-style: preserve-3d; /* Habilita o efeito 3D */
+}
+
+/* Efeito 3D na logo ao passar o mouse */
+#logo:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Rotaciona e aumenta a logo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+
+/* Responsividade para garantir que a logo se ajuste em telas menores */
+@media (max-width: 768px) {
+    #logo {
+        max-width: 60px; /* Reduz o tamanho da logo em dispositivos menores */
+    }
+}

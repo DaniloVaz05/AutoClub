@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/perfil.css">
+    
+    <title>AutoClub | Editar Perfil ADM</title>
+</head>
+<body>
+    <!-- COMEÇO DA NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="../imagens/AutoClub_logo.png" class="img-fluid" style="max-width: 80px; height: auto;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav mx-auto"> <!-- Adicionei 'mx-auto' para centralizar os itens -->
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#sobre_nos">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">Serviços</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../Oficina/index.html">Oficinas</a></li>
+                            <li><a class="dropdown-item" href="../Autopeças/index.html">Autopeças</a></li>
+                            <li><a class="dropdown-item" href="../Estética/index.html">Estética Automotiva</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="gerenciar_usuario.html">Gerenciar Usuários</a></li>
+                            <li><a class="dropdown-item" href="relatorios.html">Relatórios</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIM DA NAVBAR -->
+
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Seção de Edição de Perfil -->
+        <section class="editar-perfil-section">
+            <h2>Editar Perfil</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="nomeCompleto" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control" id="nomeCompleto" value="Luis Augusto">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" value="usuario@exemplo.com">
+                </div>
+
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone" value="+55 11 91234-5678">
+                </div>
+
+                <div class="mb-3">
+                    <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="dataNascimento" value="1990-01-01">
+                </div>
+
+                <div class="mb-3">
+                    <label for="cpf" class="form-label">CPF</label>
+                    <input type="text" class="form-control" id="cpf" value="123.456.789-10">
+                </div>
+
+                <div class="mb-3">
+                    <label for="endereco" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="endereco" value="Rua Exemplo, 123 - Bairro Exemplo, Cidade Exemplo">
+                </div>
+                
+                <hr>
+
+                <h3>Informações do Carro</h3>
+
+                <div class="mb-3">
+                    <label for="modeloCarro" class="form-label">Modelo</label>
+                    <input type="text" class="form-control" id="modeloCarro" value="Honda Civic">
+                </div>
+
+                <div class="mb-3">
+                    <label for="anoCarro" class="form-label">Ano</label>
+                    <input type="number" class="form-control" id="anoCarro" value="2020">
+                </div>
+
+                <div class="mb-3">
+                    <label for="quilometragem" class="form-label">Quilometragem</label>
+                    <input type="text" class="form-control" id="quilometragem" value="45.000 km">
+                </div>
+
+                <div class="mb-3">
+                    <label for="tempoPneus" class="form-label">Tempo de Uso dos Pneus</label>
+                    <input type="text" class="form-control" id="tempoPneus" value="2 anos">
+                </div>
+
+                <div class="mb-3">
+                    <label for="motor" class="form-label">Motor</label>
+                    <input type="text" class="form-control" id="motor" value="2.0 Flex">
+                </div>
+
+                <div class="mb-3">
+                    <label for="cor" class="form-label">Cor</label>
+                    <input type="text" class="form-control" id="cor" value="Prata">
+                </div>
+
+                <div class="mb-3">
+                    <label for="combustivel" class="form-label">Combustível</label>
+                    <input type="text" class="form-control" id="combustivel" value="Gasolina/Álcool">
+                </div>
+
+                <div class="mb-3">
+                    <label for="ultimaRevisao" class="form-label">Última Revisão</label>
+                    <input type="text" class="form-control" id="ultimaRevisao" value="Janeiro de 2024">
+                </div>
+
+                <div class="acoes-perfil">
+                    <button type="submit" class="btn editar">Salvar Alterações</button>
+                </div>
+            </form>
+        </section>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script_editar_perfil.js"></script>
+</body>
+</html>

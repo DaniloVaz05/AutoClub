@@ -1,0 +1,302 @@
+body {
+    font-size: 16px;
+    /* Tamanho de fonte padrão */
+}
+
+button {
+    margin-right: 10px;
+    padding: 10px;
+}
+
+
+/* ____________TESTE_____________ */
+#navbar {
+    height: 90px;
+}
+
+#logo {
+    margin: 0;
+    height: 70px;
+    width: 70px;
+}
+
+#bg_estetica {
+    width: 100%;
+    height: 350px;
+}
+
+#ofc {
+    font-size: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-top: -180px;
+    margin-left: 230px;
+}
+
+#pesquisa {
+    margin-top: 80px;
+    width: 500px;
+    height: 50px;
+}
+
+#overflow {
+    /*  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); */
+    border: 1px solid #676465;
+    height: 100%;
+    /*  width: 220px; */
+    left: 0%;
+    border-radius: 10px;
+    padding: 10px;
+    /*  margin-left: -100px; */
+}
+
+#checkbox {
+    /* background-color: #dcdcdc; */
+    /*  border: 1px solid #676465; */
+    /*  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); */
+    border-radius: 5px;
+    width: 150px;
+}
+
+#botao_filtro {
+    width: 150px;
+    margin-left: 20px;
+    background-color: rgb(218, 99, 8);
+    border: none;
+}
+
+.navbar-toggler {
+    border-color: white;
+    /* Muda a cor da borda do botão para branco */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+#btn{
+    background-color: rgb(218, 99, 8);
+    border: none;
+}
+
+#footer {
+    background-image: url("../imagens/bg_footer.png");
+    height: 380px;
+
+}
+
+@media (max-width: 430px) {
+    #footer {
+        height: 900px;
+    }
+}
+
+
+#logo_footer {
+    height: 100px;
+    width: 100px;
+
+}
+
+#objetivo {
+    font-size: 12px;
+    width: 150px;
+}
+
+#link_icon {
+    text-decoration: none;
+    color: aliceblue;
+    text-align: center;
+}
+
+/* #font-buttons {
+    margin-top: 10px;
+}
+
+@media (max-width: 991.98px) {
+    #font-buttons {
+        display: flex;
+        flex-direction: inline;
+        align-items: center;
+    }
+} */
+
+
+#nome_estetica {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#img_estetica{
+    width: 600px;
+    height: 400px;
+}
+
+#card_local {
+    margin-top: 10px;
+}
+
+#mapa {
+    border-radius: 10px;
+    /* border: 1px solid #676465; */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+#titulo_descricao {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 20px;
+
+}
+
+#p_descricao {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*  #especialidade{
+    background-color: brown;
+    width: 10px;
+    height: 20px;
+}
+*/
+
+
+
+
+
+/* NavBar */
+#navbar {
+    height: auto;
+}
+
+#logo {
+    max-width: 80px; /* Tamanho máximo da logo */
+    height: auto; /* Mantém a proporção */
+}
+
+.navbar-toggler > .container-fluid{
+    border-color: white; /* Muda a cor da borda do botão para branco */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Alinhamento à direita para os links "Entrar" e "Cadastre-se" */
+.d-flex {
+    margin-left: auto; /* Empurra os botões para a direita */
+}
+
+/* Estilo para a logo */
+#logo {
+    transition: transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+    transform-style: preserve-3d; /* Habilita o efeito 3D */
+}
+
+/* Efeito 3D na logo ao passar o mouse */
+#logo:hover {
+    transform: rotateY(10deg) rotateX(10deg) scale(1.1); /* Rotaciona e aumenta a logo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Adiciona sombra */
+}
+
+
+/* Estilo para o ícone do usuário */
+.user-icon {
+    width: 60px; /* Aumenta a largura */
+    height: 60px; /* Aumenta a altura */
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover; /* Cobre o espaço da imagem */
+    border: 2px solid white; /* Adiciona uma borda branca */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Adiciona uma leve sombra para destaque */
+}
+
+
+/* Estilo para o texto de boas-vindas */
+.welcome-text {
+    display: inline-block; /* Faz o texto ficar ao lado do ícone */
+    margin-left: 8px; /* Espaçamento entre o ícone e o texto */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+/* Ajustes no tamanho do texto */
+.welcome-text span {
+    font-size: 14px; /* Tamanho do texto */
+    font-weight: 500; /* Peso do texto */
+    color: white; /* Cor do texto */
+    line-height: 1; /* Alinhamento vertical adequado */
+}
+
+
+/* Estilo para o ícone de perfil */
+.navbar-nav .nav-item .nav-link .material-symbols-outlined {
+    font-size: 36px; /* Tamanho do ícone */
+    color: white; /* Cor do ícone */
+    transition: transform 0.3s ease, color 0.3s ease; /* Transições suaves */
+    margin-left: 100px;
+}
+
+/* Aumenta o ícone ao passar o mouse */
+.navbar-nav .nav-item .nav-link:hover .material-symbols-outlined {
+    transform: scale(1.2); /* Aumenta levemente o ícone ao passar o mouse */
+    color: #f0ad4e; /* Cor de destaque */
+}
+
+/* Estilo para o texto "Bem-Vindo" */
+.navbar-nav .nav-item .text-white {
+    font-size: 18px; /* Tamanho do texto */
+    font-weight: 500; /* Peso do texto */
+    color: white; /* Cor branca */
+    line-height: 1; /* Alinhamento vertical adequado */
+}
+
+/* Muda a cor do texto ao passar o mouse */
+.navbar-nav .nav-item .text-white:hover {
+    color: #f0ad4e; /* Cor de destaque */
+}
+
+/* Estilo do dropdown */
+.navbar-nav .dropdown-menu {
+    background-color: #343a40; /* Fundo escuro */
+    border: none; /* Remove a borda padrão */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra para profundidade */
+    transition: all 0.3s ease; /* Transição suave para o dropdown */
+}
+
+.navbar-nav .dropdown-item {
+    color: white; /* Cor do texto das opções do dropdown */
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+}
+
+/* Muda a cor de fundo e do texto ao passar o mouse */
+.navbar-nav .dropdown-item:hover {
+    background-color: #f0ad4e; /* Fundo laranja ao passar o mouse */
+    color: #000; /* Cor do texto */
+}
+
+/* Responsividade para ícones menores em telas pequenas */
+@media (max-width: 768px) {
+    .navbar-nav .nav-item .nav-link .material-symbols-outlined {
+        font-size: 28px; /* Tamanho menor para dispositivos móveis */
+    }
+
+    .navbar-nav .nav-item .text-white {
+        font-size: 16px; /* Texto menor para dispositivos móveis */
+    }
+}
+
+
+
+
+/* Responsividade para garantir que a logo se ajuste em telas menores */
+@media (max-width: 768px) {
+    #logo {
+        max-width: 60px; /* Reduz o tamanho da logo em dispositivos menores */
+    }
+}

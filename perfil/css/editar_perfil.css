@@ -1,0 +1,68 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 100px; /* Espaçamento para evitar que o conteúdo seja coberto pela navbar */
+    padding: 20px;
+}
+
+/* Container principal */
+.container {
+    background-color: #fff;
+    width: 80%; /* Ocupar 80% da tela */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 8rem; /* Ajustar o espaçamento adicional */
+}
+
+/* Seção de edição de perfil */
+.editar-perfil-section h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos botões */
+.acoes-perfil {
+    text-align: center;
+}
+
+.acoes-perfil .btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.acoes-perfil .btn.editar {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.acoes-perfil .btn.editar:hover {
+    background-color: #45a049;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+}

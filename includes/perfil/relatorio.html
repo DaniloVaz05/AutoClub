@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/relatorio.css">
+    <title>AutoClub | Relatórios de Atividades</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav id="navbar" class="navbar navbar-expand-lg bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img id="logo" src="../imagens/AutoClub_logo.png" class="img-fluid" style="max-width: 80px; height: auto;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#sobre_nos">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#contato">Contato</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Serviços
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../Oficina/index.html">Oficinas</a></li>
+                            <li><a class="dropdown-item" href="../Autopeças/index.html">Autopeças</a></li>
+                            <li><a class="dropdown-item" href="../Estética/index.html">Estética Automotiva</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="gerenciar_usuario.html">Gerenciar Usuários</a></li>
+                            <li><a class="dropdown-item" href="relatorio.html">Relatórios</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- FIM NAVBAR -->
+
+    <!-- Container principal -->
+    <div class="container">
+        <!-- Seção de Relatórios -->
+        <section class="relatorios-section">
+            <h2 class="text-center">Relatórios de Atividades</h2>
+
+            <!-- Tabela de relatórios -->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Usuário</th>
+                        <th>Ação</th>
+                        <th>Data e Hora</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Luis Augusto</td>
+                        <td>Adicionou novo usuário</td>
+                        <td>04/10/2024 - 14:32</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Maria Luiza</td>
+                        <td>Atualizou informações do perfil</td>
+                        <td>04/10/2024 - 12:15</td>
+                    </tr>
+                    <!-- Outros relatórios podem ser listados aqui -->
+                </tbody>
+            </table>
+
+            <!-- Botão para exportar relatórios -->
+            <div class="acoes-relatorios">
+                <a href="" download class="btn btn-success">Exportar Relatórios</a>
+            </div>
+        </section>
+    </div>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
