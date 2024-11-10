@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.6/jquery.inputmask.min.js"></script>
     <script src="https://unpkg.com/imask"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <!--  ---------------------------------------------------------------------------------------------------------------------------- -->
+    <!--  ---------------------------------------------------------------------------------------------------------------------------- -->
     <title>AutoClub | Cadastro</title>
     <script src="../js/mascaras.js"></script>
 </head>
@@ -43,7 +43,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="login.html">Entrar</a>
+                        <a class="nav-link text-white" href="login.php">Entrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="">Cadastre-se</a>
@@ -63,6 +63,10 @@
         <button id="decrease-font" class="btn"><i class="fas fa-search-minus"></i></button>
     </div>
 
+    <?php
+    $consultaUsuario = "SELECT * FROM usuario WHERE pergunta =? email = ?";
+    
+    ?>
 
     <div class="container">
         <section class="cadastro-section">
@@ -70,6 +74,11 @@
             <hr>
             <br>
             <form id="formCadastro" action="../includes/cadastrar_usuario.php" method="POST">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Qual o nome do seu gato?</label>
+                    <input type="text" class="form-control" name="pergunta" id="pergunta"
+                        placeholder="Qual nome do seu gato?">
+                </div>
 
                 <div class="mb-3">
                     <label for="nome" class="form-label">Nome Completo</label>
@@ -182,7 +191,7 @@
                     <label for="senha" class="form-label">Senha</label>
                     <div class="input-group">
                         <input type="password" class="form-control" name="senha" id="senha" placeholder="******"
-                            pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,12}$"
+                            pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[@#$!%*?&])[A-Za-z\d@$!%*?&]{6,12}$"
                             title="A senha deve conter de 6 a 12 caracteres, incluindo pelo menos uma letra maiúscula, um número e um caractere especial." required>
                         <span class="input-group-text">
                             <i id="toggleSenha" class="fa fa-eye" style="cursor: pointer;"></i>
@@ -231,44 +240,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-    
-    <script>
-    // Função para alternar a visibilidade da senha
-    document.getElementById('toggleSenha').addEventListener('click', function () {
-        const senhaInput = document.getElementById('senha');
-        const senhaIcon = document.getElementById('toggleSenha');
-        
-        if (senhaInput.type === 'password') {
-            senhaInput.type = 'text';
-            senhaIcon.classList.remove('fa-eye');
-            senhaIcon.classList.add('fa-eye-slash');
-        } else {
-            senhaInput.type = 'password';
-            senhaIcon.classList.remove('fa-eye-slash');
-            senhaIcon.classList.add('fa-eye');
-        }
-    });
-
-    // Função para alternar a visibilidade da confirmação de senha
-    document.getElementById('toggleConfirmarSenha').addEventListener('click', function () {
-        const confirmarSenhaInput = document.getElementById('confirmarSenha');
-        const confirmarSenhaIcon = document.getElementById('toggleConfirmarSenha');
-        
-        if (confirmarSenhaInput.type === 'password') {
-            confirmarSenhaInput.type = 'text';
-            confirmarSenhaIcon.classList.remove('fa-eye');
-            confirmarSenhaIcon.classList.add('fa-eye-slash');
-        } else {
-            confirmarSenhaInput.type = 'password';
-            confirmarSenhaIcon.classList.remove('fa-eye-slash');
-            confirmarSenhaIcon.classList.add('fa-eye');
-        }
-    });
-</script>
-
 
     <script>
-        document.getElementById('limparCampos').addEventListener('click', function () {
+        // Função para alternar a visibilidade da senha
+        document.getElementById('toggleSenha').addEventListener('click', function() {
+            const senhaInput = document.getElementById('senha');
+            const senhaIcon = document.getElementById('toggleSenha');
+
+            if (senhaInput.type === 'password') {
+                senhaInput.type = 'text';
+                senhaIcon.classList.remove('fa-eye');
+                senhaIcon.classList.add('fa-eye-slash');
+            } else {
+                senhaInput.type = 'password';
+                senhaIcon.classList.remove('fa-eye-slash');
+                senhaIcon.classList.add('fa-eye');
+            }
+        });
+
+        // Função para alternar a visibilidade da confirmação de senha
+        document.getElementById('toggleConfirmarSenha').addEventListener('click', function() {
+            const confirmarSenhaInput = document.getElementById('confirmarSenha');
+            const confirmarSenhaIcon = document.getElementById('toggleConfirmarSenha');
+
+            if (confirmarSenhaInput.type === 'password') {
+                confirmarSenhaInput.type = 'text';
+                confirmarSenhaIcon.classList.remove('fa-eye');
+                confirmarSenhaIcon.classList.add('fa-eye-slash');
+            } else {
+                confirmarSenhaInput.type = 'password';
+                confirmarSenhaIcon.classList.remove('fa-eye-slash');
+                confirmarSenhaIcon.classList.add('fa-eye');
+            }
+        });
+    </script>
+
+
+    <script>
+        document.getElementById('limparCampos').addEventListener('click', function() {
             document.getElementById('formCadastro').reset();
             updateFormFields(); // Reset the fields on clear
         });
@@ -306,61 +315,60 @@
         updateFormFields();
     </script>
 
-<script>
-    document.getElementById('toggleSenha').addEventListener('click', function () {
-        const senhaInput = document.getElementById('senha');
-        const senhaIcon = document.getElementById('toggleSenha');
+    <script>
+        document.getElementById('toggleSenha').addEventListener('click', function() {
+            const senhaInput = document.getElementById('senha');
+            const senhaIcon = document.getElementById('toggleSenha');
 
-        if (senhaInput.type === 'password') {
-            senhaInput.type = 'text';
-            senhaIcon.classList.remove('fa-eye');
-            senhaIcon.classList.add('fa-eye-slash');
-        } else {
-            senhaInput.type = 'password';
-            senhaIcon.classList.remove('fa-eye-slash');
-            senhaIcon.classList.add('fa-eye');
-        }
-    });
+            if (senhaInput.type === 'password') {
+                senhaInput.type = 'text';
+                senhaIcon.classList.remove('fa-eye');
+                senhaIcon.classList.add('fa-eye-slash');
+            } else {
+                senhaInput.type = 'password';
+                senhaIcon.classList.remove('fa-eye-slash');
+                senhaIcon.classList.add('fa-eye');
+            }
+        });
 
-    document.getElementById('toggleConfirmarSenha').addEventListener('click', function () {
-        const confirmarSenhaInput = document.getElementById('confirmarSenha');
-        const confirmarSenhaIcon = document.getElementById('toggleConfirmarSenha');
+        document.getElementById('toggleConfirmarSenha').addEventListener('click', function() {
+            const confirmarSenhaInput = document.getElementById('confirmarSenha');
+            const confirmarSenhaIcon = document.getElementById('toggleConfirmarSenha');
 
-        if (confirmarSenhaInput.type === 'password') {
-            confirmarSenhaInput.type = 'text';
-            confirmarSenhaIcon.classList.remove('fa-eye');
-            confirmarSenhaIcon.classList.add('fa-eye-slash');
-        } else {
-            confirmarSenhaInput.type = 'password';
-            confirmarSenhaIcon.classList.remove('fa-eye-slash');
-            confirmarSenhaIcon.classList.add('fa-eye');
-        }
-    });
-</script>
+            if (confirmarSenhaInput.type === 'password') {
+                confirmarSenhaInput.type = 'text';
+                confirmarSenhaIcon.classList.remove('fa-eye');
+                confirmarSenhaIcon.classList.add('fa-eye-slash');
+            } else {
+                confirmarSenhaInput.type = 'password';
+                confirmarSenhaIcon.classList.remove('fa-eye-slash');
+                confirmarSenhaIcon.classList.add('fa-eye');
+            }
+        });
+    </script>
 
     <!-- JS modo escuro -->
-<script>
-    document.getElementById('mode-toggle').addEventListener('click', function () {
-        document.body.classList.toggle('dark-mode');
-        const currentMode = document.body.classList.contains('dark-mode') ? 'Escuro' : 'Claro';
-    });
-</script>
+    <script>
+        document.getElementById('mode-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const currentMode = document.body.classList.contains('dark-mode') ? 'Escuro' : 'Claro';
+        });
+    </script>
 
-<!-- JS Aumentar e diminuir tamanho da fonte -->
-<script>
-    let fontSize = 16;
+    <!-- JS Aumentar e diminuir tamanho da fonte -->
+    <script>
+        let fontSize = 16;
 
-    document.getElementById('increase-font').addEventListener('click', function () {
-        fontSize += 2;
-        document.body.style.fontSize = fontSize + 'px';
-    });
+        document.getElementById('increase-font').addEventListener('click', function() {
+            fontSize += 2;
+            document.body.style.fontSize = fontSize + 'px';
+        });
 
-    document.getElementById('decrease-font').addEventListener('click', function () {
-        fontSize -= 2;
-        document.body.style.fontSize = fontSize + 'px';
-    });
-
-</script>
+        document.getElementById('decrease-font').addEventListener('click', function() {
+            fontSize -= 2;
+            document.body.style.fontSize = fontSize + 'px';
+        });
+    </script>
 
     <script src="cadastro.js"></script>
 </body>

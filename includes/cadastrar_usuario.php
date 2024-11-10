@@ -7,6 +7,7 @@ require("conexao.php");
 
 //verificando se a requisição foi feita via método post e pegando a variáveis do formulário
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $pergunta = $_POST["pergunta"];
     $nome = $_POST["nome"];
     $cpf = $_POST["cpf"];
     $nomeMaterno = $_POST["nomeMaterno"];
@@ -28,13 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $dataNasc = date("Y-m-d", strtotime($dataNasc));
 
     //preparando a conculta
-    $consulta = "INSERT INTO usuario(nome, cpf, nomeMaterno, dataNasc, sexo, telefone, logradouro, numero, bairro, cidade, uf, cep, email, senha, nivel, id_assinatura)
-                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    $consulta = "INSERT INTO usuario(pergunta, nome, cpf, nomeMaterno, dataNasc, sexo, telefone, logradouro, numero, bairro, cidade, uf, cep, email, senha, nivel, id_assinatura)
+                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
     //preparando a declaração da cosulta
     $stmt = $conexao->prepare($consulta);
 
-    $stmt->bind_param("ssssssssssssssii", $nome, $cpf, $nomeMaterno, $dataNasc, $sexo, $telefone, $logradouro, $numero, $bairro, $cidade, $uf, $cep, $email, $senha, $nivel, $assinatura);
+    $stmt->bind_param("sssssssssssssssii",$pergunta, $nome, $cpf, $nomeMaterno, $dataNasc, $sexo, $telefone, $logradouro, $numero, $bairro, $cidade, $uf, $cep, $email, $senha, $nivel, $assinatura);
 
     if ($assinatura === 0) {
         echo "\n<script>";
@@ -49,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             //executo a consulta
             $stmt->execute();
 
-            header('location: ../login_cadastro/login.html');
+            header('location: ../login e cadastro/login.html');
 
             // Encerra o script após o redirecionamento
             exit();
