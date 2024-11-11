@@ -55,18 +55,61 @@
         <!-- Diminuir Fonte -->
         <button id="decrease-font" class="btn"><i class="fas fa-search-minus"></i></button>
     </div>
+    
+    <?php
+// Iniciar a sessão
+session_start();
+
+// Conexão com o banco de dados
+require("../includes/conexao.php");
+
+// Verificar se o formulário foi enviado
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email']);
+    $CPF = trim($_POST['cpf']);
+
+    // Preparar a query para evitar SQL Injection
+    $query = "SELECT * FROM usuario WHERE email = ? AND cpf = ?";
+    $stmt = $conexao->prepare($query);
+
+    // Vincular parâmetros
+    $stmt->bind_param("ss", $email, $CPF);
+
+    // Executar a consulta
+    $stmt->execute();
+
+    // Obter o resultado
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+
+    // Verificar se o usuário foi encontrado
+    if ($row) {
+        // Armazenar o CPF na sessão
+        $_SESSION["cpf"] = $row["cpf"];
+
+        // Redireciona para a página de atualização de senha
+        header('Location: ../login_cadastro/atualizar_senha.php');
+        exit();
+    } else {
+        // Caso nenhum registro seja encontrado
+        echo '<script>';
+        echo 'alert("E-mail ou CPF incorreta!");';
+        echo 'window.location.href = "../login_cadastro/recuperar_senha.html";'; // Redireciona para o formulário
+        echo '</script>';
+    }
+}
+?>
 
     <!-- Container principal -->
     <div class="container">
         <!-- Seção de Login -->
         <section class="login-section">
             <h2>Criar Senha</h2>
-            <form id="loginForm" class="loginForm">
+            <form id="loginForm" class="loginForm" method="POST" action="">
                 <div class="mb-3">
                     <label for="senha" class="form-label">Nova Senha</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="senha" placeholder="Digite sua nova senha"
-                        maxlength="8" minlength="8">
+                        <input type="password" class="form-control" id="senha" name="senha" placeholder="Digite sua nova senha" maxlength="8" minlength="8">
                         <span class="input-group-text">
                             <i id="toggleSenha" class="fa fa-eye" style="cursor: pointer;"></i>
                         </span>
@@ -76,8 +119,7 @@
                 <div class="mb-3">
                     <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
                     <div class="input-group">
-                        <input type="password" class="form-control" id="confirmarSenha"
-                            placeholder="Confirme sua nova senha" maxlength="8" minlength="8">
+                        <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme sua nova senha" maxlength="8" minlength="8">
                         <span class="input-group-text">
                             <i id="toggleConfirmarSenha" class="fa fa-eye" style="cursor: pointer;"></i>
                         </span>
@@ -85,14 +127,12 @@
                 </div>
                 
                 <div class="acoes-login">
-                    <button type="submit" class="btn entrar" onclick="window.location.href='login e cadastro/login.html'">Confirmar</button>
+                    <button type="submit" class="btn entrar">Confirmar</button>
                 </div>
-
             </form>
-
         </section>
-
     </div>
+
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="cadastro.js"></script>
 
@@ -100,7 +140,6 @@
     <script>
         document.getElementById('mode-toggle').addEventListener('click', function () {
             document.body.classList.toggle('dark-mode');
-            const currentMode = document.body.classList.contains('dark-mode') ? 'Escuro' : 'Claro';
         });
     </script>
 
@@ -117,8 +156,21 @@
             fontSize -= 2;
             document.body.style.fontSize = fontSize + 'px';
         });
-
     </script>
 
+    <!-- JS Exibir/Ocultar Senha -->
+    <script>
+        document.getElementById('toggleSenha').addEventListener('click', function() {
+            const senhaField = document.getElementById('senha');
+            senhaField.type = senhaField.type === 'password' ? 'text' : 'password';
+            this.classList.toggle('fa-eye-slash');
+        });
+
+        document.getElementById('toggleConfirmarSenha').addEventListener('click', function() {
+            const confirmarSenhaField = document.getElementById('confirmarSenha');
+            confirmarSenhaField.type = confirmarSenhaField.type === 'password' ? 'text' : 'password';
+            this.classList.toggle('fa-eye-slash');
+        });
+    </script>
 </body>
 </html>

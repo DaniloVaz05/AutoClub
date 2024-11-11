@@ -21,6 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Obter o resultado
     $result = $stmt->get_result();
     $row = $result->fetch_assoc();
+    $_SESSION["cpf"] = $row["cpf"];
 
     if (!$row) {
         // Caso nenhum registro seja encontrado
@@ -30,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo '</script>';
     } else {
         // Redireciona para a página de atualização de senha
-        header('Location: ../login_cadastro/atualizar_senha.html');
+        header('Location: ../login_cadastro/atualizar_senha.php');
         exit();
     }
 }
