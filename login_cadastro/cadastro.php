@@ -71,12 +71,6 @@
             <br>
             <form id="formCadastro" action="../includes/cadastrar_usuario.php" method="POST">
                 <div class="mb-3">
-                    <label for="nome" class="form-label">Qual o nome do seu gato?</label>
-                    <input type="text" class="form-control" name="pergunta" id="pergunta"
-                        placeholder="Qual nome do seu gato?">
-                </div>
-
-                <div class="mb-3">
                     <label for="nome" class="form-label">Nome Completo</label>
                     <input type="text" class="form-control" name="nome" id="nome"
                         placeholder="Digite seu nome completo">
