@@ -1,17 +1,12 @@
 <?php
-//comecei a sessão
 session_start();
-
-//incluí a conexão no arquivo
 require("conexao.php");
 
-//verificando se a requisição foi feita via método post e pegando a variáveis do formulário
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $pergunta = $_POST["pergunta"];
     $nome = $_POST["nome"];
     $cpf = $_POST["cpf"];
     $nomeMaterno = $_POST["nomeMaterno"];
-    $dataNasc = $_POST["dataNasc"];
+    $dataNasc = date("Y-m-d", strtotime($_POST["dataNasc"]));
     $sexo = $_POST["sexo"];
     $telefone = $_POST["telefone"];
     $logradouro = $_POST["logradouro"];
@@ -23,42 +18,49 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
     $senha = $_POST["senha"];
     $confSenha = $_POST["confirmarSenha"];
+    $assinatura = intval($_POST["assinatura"]);
     $nivel = 1;
-    $assinatura = $_POST["assinatura"];
 
-    $dataNasc = date("Y-m-d", strtotime($dataNasc));
+    if (empty($assinatura)) {
+        echo "<script>alert('Assinatura é obrigatória!'); window.location.href = '../home/home.html';</script>";
+        exit();
+    }
 
-    //preparando a conculta
-    $consulta = "INSERT INTO usuario(pergunta, nome, cpf, nomeMaterno, dataNasc, sexo, telefone, logradouro, numero, bairro, cidade, uf, cep, email, senha, nivel, id_assinatura)
-                VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    if ($senha === $confSenha) {
+        $senha = password_hash($senha, PASSWORD_BCRYPT);
 
-    //preparando a declaração da cosulta
-    $stmt = $conexao->prepare($consulta);
+        $consulta = "INSERT INTO usuario ( nome, cpf, nomeMaterno, dataNasc, sexo, telefone, logradouro, numero, bairro, cidade, uf, cep, email, senha, nivel, id_assinatura)
+                     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-    $stmt->bind_param("sssssssssssssssii",$pergunta, $nome, $cpf, $nomeMaterno, $dataNasc, $sexo, $telefone, $logradouro, $numero, $bairro, $cidade, $uf, $cep, $email, $senha, $nivel, $assinatura);
+        $stmt = $conexao->prepare($consulta);
+        $stmt->bind_param(
+            "ssssssssssssssii", 
+            $nome, 
+            $cpf, 
+            $nomeMaterno, 
+            $dataNasc, 
+            $sexo, 
+            $telefone, 
+            $logradouro, 
+            $numero, 
+            $bairro, 
+            $cidade, 
+            $uf, 
+            $cep, 
+            $email, 
+            $senha, 
+            $nivel, 
+            $assinatura
+        );
 
-    if ($assinatura === 0) {
-        echo "\n<script>";
-        echo "\nalert('Desculpe! A assinatura é obrigatória!')";
-        echo "\nwindow.location.href = '../home/home.html'";
-        echo "\n</script>";
-    } else {
-        //varificando se as senhas estão corretas
-        if ($senha === $confSenha) {
-            //criptografando a senha
-            $senha = password_hash($_POST["senha"], PASSWORD_BCRYPT);
-            //executo a consulta
-            $stmt->execute();
-
-            header('location: ../login e cadastro/login.html');
-
-            // Encerra o script após o redirecionamento
+        if ($stmt->execute()) {
+            header('Location: ../login_cadastro/login.html');
             exit();
         } else {
-            echo "\n<script>";
-            echo "\nalert('Senhas estão incorretas. Por favor, insira as senhas novamente!')";
-            echo "\n</script>";
+            echo "<script>alert('Erro ao cadastrar usuário. Por favor, tente novamente!');</script>";
         }
+    } else {
+        echo "<script>alert('Senhas não coincidem!');</script>";
     }
 }
 ?>

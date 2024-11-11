@@ -39,7 +39,7 @@
                         <a class="nav-link text-white" href="login.html">Entrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="cadastro.html">Cadastre-se</a>
+                        <a class="nav-link text-white" href="cadastro.php">Cadastre-se</a>
                     </li>
                 </ul>
             </div>
@@ -62,10 +62,10 @@
         <!-- Seção de Login -->
         <section class="login-section">
             <h2>Esqueceu a Senha?</h2>
-            <form id="loginForm" class="loginForm">
+            <form id="loginForm" class="loginForm" action="../includes/recuperar_senha.php" method="post">
                 <div class="mb-3">
-                    <label for="nome" class="form-label">Nome</label>
-                    <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite seu nome">
+                    <label for="nome" class="form-label">Seu CPF?</label>
+                    <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite seu CPF?">
                 </div>
 
                 <div class="mb-3">
@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="acoes-login">
-                    <button type="submit" class="btn entrar" id="sendEmailButton">Enviar E-mail</button>
+                    <button type="submit" class="btn entrar" id="sendEmailButton">Recuperar</button>
                 </div>
             </form>
         </section>
@@ -109,7 +109,7 @@
 
         // Adiciona o evento de envio ao formulário
         document.getElementById("loginForm").addEventListener("submit", function (event) {
-            event.preventDefault(); // Impede o envio do formulário
+             // Impede o envio do formulário
 
             const email = document.getElementById("email").value;
 

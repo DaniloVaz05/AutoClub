@@ -1,4 +1,4 @@
-CREATE SCHEMA IF NOT EXISTS `AutoClub` DEFAULT CHARACTER SET utf8 ;
+CREATE DATABASE AutoClub ;
 USE `AutoClub` ;
 
 
@@ -303,9 +303,9 @@ VALUES(default, "Luis", "admin", "123","", 0),
       
 
 INSERT INTO usuario(id_usuario, nome, cpf, nomeMaterno, dataNasc, sexo, telefone, logradouro, numero, bairro, cidade, uf, cep, email, senha, nivel, foto, id_assinatura)
-VALUES(default, "Matheus Fernandes", "254.987.365-98", "Claudia Fernandes", "1999-03-14", "M", "(21)96352-8754", "Rua A", "456", "Anchieta", "Rio de Janeiro", "RJ", "21547-875", "matheusf@gmail.com", "228675AS", 1, "",1 ),
-	  (default, "Gabriela da Silva", "654.982.348-78", "Mônica da Silva", "1991-07-22", "F", "(21)93254-8306", "Rua B", "54", "Pavuna", "Rio de Janeiro", "RJ", "32587-156", "gabidasilva@gmail.com", "61369A!2", 1, "", 1),
-	  (default, "Carolina Pereira", "026.874.654-45", "Fátima Pereira", "1989-10-01", "F", "(21)93057-2549", "Rua C", "456", "Bangu", "Rio de Janeiro", "RJ", "24569-785", "carolpereira@gmail.com", "32697PI@", 1, "", 1);
+VALUES(default,"Matheus Fernandes", "254.987.365-98", "Claudia Fernandes", "1999-03-14", "M", "(21)96352-8754", "Rua A", "456", "Anchieta", "Rio de Janeiro", "RJ", "21547-875", "matheusf@gmail.com", "228675AS", 1, "",1 ),
+	  (default,"Gabriela da Silva", "654.982.348-78", "Mônica da Silva", "1991-07-22", "F", "(21)93254-8306", "Rua B", "54", "Pavuna", "Rio de Janeiro", "RJ", "32587-156", "gabidasilva@gmail.com", "61369A!2", 1, "", 1),
+	  (default,"Carolina Pereira", "026.874.654-45", "Fátima Pereira", "1989-10-01", "F", "(21)93057-2549", "Rua C", "456", "Bangu", "Rio de Janeiro", "RJ", "24569-785", "carolpereira@gmail.com", "32697PI@", 1, "", 1);
 
 
 INSERT INTO autopecas(id_autopecas, nome, cnpj, logradouro, numero, bairro, cidade, uf, cep, telefone, email, senha, nivel, foto, id_assinatura)
@@ -388,3 +388,5 @@ SELECT * FROM servicos_estetica;
 SELECT * FROM estetica_carro;
 SELECT * FROM carro_oficina;
 SELECT * FROM servicos_oficina;
+
+

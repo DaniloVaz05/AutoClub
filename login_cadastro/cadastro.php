@@ -43,7 +43,7 @@
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="login.php">Entrar</a>
+                        <a class="nav-link text-white" href="./login.html">Entrar</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="">Cadastre-se</a>
@@ -63,10 +63,6 @@
         <button id="decrease-font" class="btn"><i class="fas fa-search-minus"></i></button>
     </div>
 
-    <?php
-    $consultaUsuario = "SELECT * FROM usuario WHERE pergunta =? email = ?";
-    
-    ?>
 
     <div class="container">
         <section class="cadastro-section">
